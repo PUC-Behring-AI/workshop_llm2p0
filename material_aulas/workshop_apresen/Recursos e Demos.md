@@ -3,19 +3,22 @@
 
 | Seção | Recurso | Finalidade |
 |---|---|---|
-| 03 | Google Teachable Machine | Treinamento de modelos |
-| 05 | Runcell Token Counter | Contagem de tokens |
-| 05 | HF Tokenizer Playground | Comparar tokenização |
 | Linguagem | displaCy | Dependências sintáticas (DL) |
 | Linguagem | displaCy NER | Entidades nomeadas (DL) |
 | Linguagem | spaCy Matcher | Regras/ML |
 | Linguagem | Prodigy NER Demo | Anotação manual |
 | Linguagem | perguntas_ambiguidade.ipynb | Ambiguidade linguística |
 | Linguagem | plot_embeddings.ipynb | Visualização de embeddings |
+| Linguagem | guardrail_main.py | System prompts & Security |
+| 03 | Google Teachable Machine | Treinamento de modelos |
+| 06 | Runcell Token Counter | Contagem de tokens |
+| 06 | HF Tokenizer Playground | Comparar tokenização |
 | 06 | Next Token Prediction | Próximo token |
+| 06 | Artificial Analysis | Benchmarks e custo de modelos |
 | 09 | Leaked System Prompts | System prompts |
-| 09 | guardrail_main.py| System prompts & Security |
-| 10 | Prompting Guide / ChatHub | Engenharia de prompts |
+| 10 | ChatHub Prompt Library | Biblioteca de prompts prontos |
+| 10 | Prompting Guide | Engenharia de prompts |
+| 11 | Chatbots (lista comparativa) | Antropomorfização |
 
 [[Índice]]
 

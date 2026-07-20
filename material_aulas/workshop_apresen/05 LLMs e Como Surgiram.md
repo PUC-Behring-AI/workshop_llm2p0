@@ -33,7 +33,7 @@ A ideia central tem mais de 70 anos. O que mudou foi a escala.
 
 Essa é a mesma equação que vimos em [[03 Machine Learning]] — mas aplicada a linguagem, em escala de bilhões de parâmetros e trilhões de palavras de treinamento.
 
-Para entender o que são os $t_i$ nessa equação — as unidades sobre as quais o modelo opera — veja [[06 Como os LLMs Aprendem#Tokenização — as unidades do aprendizado|06 — Tokenização]]. Para ver ao vivo como o modelo calcula as probabilidades do próximo token, use os demos em [[Recursos e Demos#05. Tokenização|Recursos e Demos]].
+Para entender o que são os $t_i$ nessa equação — as unidades sobre as quais o modelo opera — veja [[06 Como os LLMs Aprendem#Tokenização — as unidades do aprendizado|06 — Tokenização]]. Para ver ao vivo como o modelo calcula as probabilidades do próximo token, use os demos em [[Recursos e Demos#06. Como os LLMs Aprendem — auto-supervisão, tokens e geração|Recursos e Demos]].
 
 O "Grande" no nome não é marketing. Ele descreve uma descontinuidade real: modelos acima de certos limiares de escala desenvolvem **capacidades emergentes** que modelos menores simplesmente não têm — raciocínio em múltiplos passos, aprendizado a partir de exemplos no prompt, tradução sem treinamento explícito para o par de idiomas.
 
@@ -199,7 +199,7 @@ O GPT-2 (2019, 1,5 bilhão de parâmetros) gerou tal preocupação com desinform
 | Treinamento | Mascaramento de tokens | Próximo token |
 | Ponto forte | Classificação, QA | Completar texto, diálogo |
 
-> 💡 **Demo ao vivo — tokenização:** O treinamento por "mascaramento de tokens" e "próximo token" só faz sentido quando você vê o que é um token. Use os demos em [[Recursos e Demos#9. Tokenização|Recursos: Tokenização]] — [Runcell Token Counter](https://www.runcell.dev/tool/token-counter#counter) e [HuggingFace Tokenizer Playground](https://huggingface.co/spaces/Xenova/the-tokenizer-playground) — para mostrar como o mesmo texto é dividido de formas diferentes por diferentes modelos.
+> 💡 **Demo ao vivo — tokenização:** O treinamento por "mascaramento de tokens" e "próximo token" só faz sentido quando você vê o que é um token. Use os demos em [[Recursos e Demos#06. Como os LLMs Aprendem — auto-supervisão, tokens e geração|Recursos: Tokenização]] — [Runcell Token Counter](https://www.runcell.dev/tool/token-counter#counter) e [HuggingFace Tokenizer Playground](https://huggingface.co/spaces/Xenova/the-tokenizer-playground) — para mostrar como o mesmo texto é dividido de formas diferentes por diferentes modelos.
 
 ---
 
@@ -216,7 +216,7 @@ Isso era emergência em ação: uma capacidade que o GPT-2 não tinha, que não 
 
 O artigo tem um subtítulo que define uma era: *"Language models are few-shot learners"* — modelos de linguagem são aprendizes de poucos exemplos. A fronteira entre "modelo" e "sistema que pode ser instruído" começou a se dissolver.
 
-> 💡 **Demo ao vivo — próximo token:** Para ver de perto como o modelo "decide" o que vem a seguir — as distribuições de probabilidade por token — use os demos em [[Recursos e Demos#06. Completando Palavras — Predição do Próximo Token|Recursos: Predição do Próximo Token]]: [Next Token Prediction](https://alonsosilva-nexttokenprediction.hf.space) mostra as probabilidades de cada candidato.
+> 💡 **Demo ao vivo — próximo token:** Para ver de perto como o modelo "decide" o que vem a seguir — as distribuições de probabilidade por token — use os demos em [[Recursos e Demos#06. Como os LLMs Aprendem — auto-supervisão, tokens e geração|Recursos: Predição do Próximo Token]]: [Next Token Prediction](https://alonsosilva-nexttokenprediction.hf.space) mostra as probabilidades de cada candidato.
 
 ---
 
