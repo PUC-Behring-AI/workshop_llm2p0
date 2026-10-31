@@ -79,7 +79,7 @@ O título do artigo não é por acaso. Os autores identificaram explicitamente o
 
 **Riscos** — centralização de poder em poucos laboratórios e empresas, pontos únicos de falha que podem irradiar danos em escala, vieses e problemas do modelo base herdados por todas as aplicações construídas sobre ele, e impacto ambiental do treinamento massivo.
 
-> 💡 Esses riscos não são abstratos — voltaremos a eles na seção [[11 Antropomorfização]] e [[09 System Prompt e Guard Rails]], quando discutirmos como esses modelos moldam comportamentos e como tentamos limitá-los.
+> 💡 Esses riscos não são abstratos — voltaremos a eles nas seções [[09 System Prompt e Guard Rails]] e [[11 Antropomorfização]], quando discutirmos como esses modelos moldam comportamentos e como tentamos limitá-los. A **centralização** em poucos laboratórios, nuvens e fabricantes de chips ganha uma seção própria, do ponto de vista de quem gere informação sensível, em [[09.2 Soberania da Informação]].
 
 ---
 

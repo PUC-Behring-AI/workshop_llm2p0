@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recursos &amp; Demos — Workshop LLM 2.0</title>
+<style>
+  :root {
+    --bg: #EEF0EC;
+    --bg-raised: #FFFFFF;
+    --bg-sunken: #E3E7DE;
+    --ink: #1B2320;
+    --ink-soft: #4B584F;
+    --ink-faint: #7C887F;
+    --line: #D3D8CB;
+    --accent: #C77D2E;
+    --accent-text: #9C5E15;
+    --focus: #2C5FA8;
+    --code-bg: #E4E7DE;
+
+    --cat-ling: #1E7A67;      --cat-ling-tint: #DCEFE9;
+    --cat-03: #A8640C;        --cat-03-tint: #F3E7CE;
+    --cat-06: #2C5FA8;        --cat-06-tint: #DEE6F5;
+    --cat-09: #A5303F;        --cat-09-tint: #F5DEE1;
+    --cat-10: #6A4FA0;        --cat-10-tint: #E7E0F3;
+    --cat-11: #46701F;        --cat-11-tint: #E3EDD7;
+
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", "Roboto Mono", Menlo, Consolas, monospace;
+    --font-body: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161A;
+      --bg-raised: #1A2027;
+      --bg-sunken: #0D1013;
+      --ink: #E9EDE7;
+      --ink-soft: #AAB4AA;
+      --ink-faint: #76827A;
+      --line: #2A3138;
+      --accent: #E8A94A;
+      --accent-text: #F0B25C;
+      --focus: #8FB4E8;
+      --code-bg: #10151A;
+
+      --cat-ling: #55C9AF;      --cat-ling-tint: rgba(85,201,175,0.14);
+      --cat-03: #E3AC49;        --cat-03-tint: rgba(227,172,73,0.14);
+      --cat-06: #86AEE6;        --cat-06-tint: rgba(134,174,230,0.14);
+      --cat-09: #E5849A;        --cat-09-tint: rgba(229,132,154,0.14);
+      --cat-10: #BBA4EC;        --cat-10-tint: rgba(187,164,236,0.14);
+      --cat-11: #97C868;        --cat-11-tint: rgba(151,200,104,0.14);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12161A; --bg-raised: #1A2027; --bg-sunken: #0D1013;
+    --ink: #E9EDE7; --ink-soft: #AAB4AA; --ink-faint: #76827A;
+    --line: #2A3138; --accent: #E8A94A; --accent-text: #F0B25C; --focus: #8FB4E8;
+    --code-bg: #10151A;
+    --cat-ling: #55C9AF; --cat-ling-tint: rgba(85,201,175,0.14);
+    --cat-03: #E3AC49; --cat-03-tint: rgba(227,172,73,0.14);
+    --cat-06: #86AEE6; --cat-06-tint: rgba(134,174,230,0.14);
+    --cat-09: #E5849A; --cat-09-tint: rgba(229,132,154,0.14);
+    --cat-10: #BBA4EC; --cat-10-tint: rgba(187,164,236,0.14);
+    --cat-11: #97C868; --cat-11-tint: rgba(151,200,104,0.14);
+  }
+  :root[data-theme="light"] {
+    --bg: #EEF0EC; --bg-raised: #FFFFFF; --bg-sunken: #E3E7DE;
+    --ink: #1B2320; --ink-soft: #4B584F; --ink-faint: #7C887F;
+    --line: #D3D8CB; --accent: #C77D2E; --accent-text: #9C5E15; --focus: #2C5FA8;
+    --code-bg: #E4E7DE;
+    --cat-ling: #1E7A67; --cat-ling-tint: #DCEFE9;
+    --cat-03: #A8640C; --cat-03-tint: #F3E7CE;
+    --cat-06: #2C5FA8; --cat-06-tint: #DEE6F5;
+    --cat-09: #A5303F; --cat-09-tint: #F5DEE1;
+    --cat-10: #6A4FA0; --cat-10-tint: #E7E0F3;
+    --cat-11: #46701F; --cat-11-tint: #E3EDD7;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent-text); }
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  code, .mono { font-family: var(--font-mono); }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 1.5rem; }
+  .wrap--wide { max-width: 1180px; }
+
+  /* ---------- masthead ---------- */
+  header.masthead {
+    padding: 3.6rem 0 2.2rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 0.9rem;
+  }
+  h1 {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: clamp(2.1rem, 5vw, 3.2rem);
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+    margin: 0 0 0.9rem;
+    text-wrap: balance;
+  }
+  h1 span { color: var(--accent-text); }
+  .lede {
+    max-width: 62ch;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin: 0 0 1.6rem;
+  }
+  .stat-row {
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+  .stat-row strong {
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- filter bar ---------- */
+  .filterbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    padding: 0.85rem 0;
+  }
+  .filterbar-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+  }
+  .search {
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    min-width: 200px;
+    flex: 0 1 240px;
+  }
+  .search::placeholder { color: var(--ink-faint); }
+  .chips {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    flex: 1 1 auto;
+  }
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    white-space: nowrap;
+    border: 1px solid var(--line);
+    background: var(--bg-raised);
+    color: var(--ink-soft);
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .chip[data-active="true"] {
+    border-color: currentColor;
+    background: var(--chip-tint, var(--bg-sunken));
+    color: var(--chip-color, var(--ink));
+    font-weight: 600;
+  }
+
+  /* ---------- sections ---------- */
+  section.group { padding: 2.6rem 0; border-bottom: 1px solid var(--line); }
+  section.group:last-of-type { border-bottom: none; }
+  .group-head { margin-bottom: 1.3rem; }
+  .group-head .eyebrow { margin-bottom: 0.35rem; }
+  h2 {
+    font-family: var(--font-mono);
+    font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+    font-weight: 700;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .group-note {
+    color: var(--ink-soft);
+    max-width: 68ch;
+    margin: 0.6rem 0 0;
+    font-size: 0.95rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.9rem;
+    margin-top: 1.3rem;
+  }
+  .card {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--cat, var(--accent));
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px -10px rgba(0,0,0,0.35); }
+  .card-title {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ink);
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+  .card-title:hover { color: var(--accent-text); }
+  .card-title .arrow { font-size: 0.85em; color: var(--ink-faint); }
+  .card p { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+  .card .url {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--ink-faint);
+    word-break: break-all;
+  }
+  .badge-local {
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0.12rem 0.4rem;
+  }
+
+  /* ---------- chatbot table (sec 11) ---------- */
+  .table-wrap { overflow-x: auto; margin-top: 1.3rem; border: 1px solid var(--line); border-radius: 8px; }
+  table { border-collapse: collapse; width: 100%; min-width: 480px; background: var(--bg-raised); }
+  th, td { text-align: left; padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
+  th { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  td.mono { font-size: 0.85rem; }
+
+  /* ---------- prompt snippets ---------- */
+  .snippets { display: grid; gap: 0.9rem; margin-top: 1.3rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .snippet {
+    background: var(--code-bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .snippet-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .snippet-head span { font-family: var(--font-mono); font-size: 0.75rem; color: var(--ink-faint); }
+  .copy-btn {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    border-radius: 5px;
+    padding: 0.25rem 0.55rem;
+    cursor: pointer;
+  }
+  .copy-btn:hover { border-color: var(--accent-text); color: var(--accent-text); }
+  .snippet pre {
+    margin: 0;
+    padding: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+    color: var(--ink);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .hidden { display: none !important; }
+
+  footer {
+    padding: 2.4rem 0 3.5rem;
+    color: var(--ink-faint);
+    font-size: 0.82rem;
+    font-family: var(--font-mono);
+  }
+  footer a { color: var(--ink-faint); }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Workshop LLM 2.0 — material de apoio</p>
+    <h1>Recursos <span>&amp;</span> Demos</h1>
+    <p class="lede">
+      Links e ferramentas usados ao vivo durante a apresentação teórica, na ordem em que aparecem.
+      Use a busca ou os filtros abaixo para achar rápido o demo da seção em que estamos.
+    </p>
+    <div class="stat-row">
+      <span><strong id="stat-total">15</strong> recursos</span>
+      <span><strong>10</strong> chatbots comparados</span>
+      <span><strong>6</strong> seções</span>
+      <span><a href="https://github.com/PUC-Behring-Institute-for-AI/workshop_llm2p0/tree/PUC-CF-2026/material_aulas/workshop_apresen" target="_blank" rel="noopener noreferrer">repositório no GitHub ↗</a></span>
+    </div>
+  </div>
+</header>
+
+<nav class="filterbar">
+  <div class="wrap wrap--wide filterbar-inner">
+    <input class="search" id="search" type="text" placeholder="Buscar recurso…" aria-label="Buscar recurso">
+    <div class="chips" id="chips" role="tablist" aria-label="Filtrar por seção">
+      <button class="chip" data-filter="all" data-active="true">Todos</button>
+      <button class="chip" data-filter="ling" style="--chip-tint: var(--cat-ling-tint); --chip-color: var(--cat-ling);">Linguagem</button>
+      <button class="chip" data-filter="03" style="--chip-tint: var(--cat-03-tint); --chip-color: var(--cat-03);">03</button>
+      <button class="chip" data-filter="06" style="--chip-tint: var(--cat-06-tint); --chip-color: var(--cat-06);">06</button>
+      <button class="chip" data-filter="09" style="--chip-tint: var(--cat-09-tint); --chip-color: var(--cat-09);">09</button>
+      <button class="chip" data-filter="10" style="--chip-tint: var(--cat-10-tint); --chip-color: var(--cat-10);">10</button>
+      <button class="chip" data-filter="11" style="--chip-tint: var(--cat-11-tint); --chip-color: var(--cat-11);">11</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap wrap--wide">
+
+  <section class="group" id="sec-ling" data-cat="ling">
+    <div class="group-head">
+      <p class="eyebrow" style="color: var(--cat-ling);">Recursos adicionais</p>
+      <h2>Linguagem &amp; PLN</h2>
+      <p class="group-note">Demos de processamento de linguagem natural usados no bloco sobre Deep Learning e linguística — nem todos têm um número de seção fixo, aparecem conforme a discussão pede.</p>
+    </div>
+    <div class="cards">
+      <article class="card" style="--cat: var(--cat-ling);" data-name="displacy dependências sintáticas spacy">
+        <a class="card-title" href="https://demos.explosion.ai/displacy" target="_blank" rel="noopener noreferrer">displaCy <span class="arrow">↗</span></a>
+        <p>Visualização das árvores de dependência produzidas pelo spaCy. Mostra como modelos analisam relações sintáticas.</p>
+        <span class="url">demos.explosion.ai/displacy</span>
+      </article>
+      <article class="card" style="--cat: var(--cat-ling);" data-name="displacy ner entidades nomeadas">
+        <a class="card-title" href="https://demos.explosion.ai/displacy-ent" target="_blank" rel="noopener noreferrer">displaCy NER <span class="arrow">↗</span></a>
+        <p>Visualização de reconhecimento de entidades nomeadas.</p>
+        <span class="url">demos.explosion.ai/displacy-ent</span>
+      </article>
+      <article class="card" style="--cat: var(--cat-ling);" data-name="spacy matcher regras ml">
+        <a class="card-title" href="https://demos.explosion.ai/matcher" target="_blank" rel="noopener noreferrer">spaCy Matcher <span class="arrow">↗</span></a>
+        <p>Regras e padrões para extração de informação, contrastando abordagens simbólicas e aprendizado de máquina.</p>
+        <span class="url">demos.explosion.ai/matcher</span>
+      </article>
+      <article class="card" style="--cat: var(--cat-ling);" data-name="prodigy ner anotação manual">
+        <a class="card-title" href="https://demo.prodi.gy/?=null&view_id=ner_manual" target="_blank" rel="noopener noreferrer">Prodigy NER Demo <span class="arrow">↗</span></a>
+        <p>Anotação manual de entidades para treinamento supervisionado.</p>
+        <span class="url">demo.prodi.gy</span>
+      </article>
+      <article class="card" style="--cat: var(--cat-ling);" data-name="perguntas ambiguidade notebook ambiguidade linguística">
+        <span class="badge-local">no repositório</span>
+        <a class="card-title" href="https://github.com/PUC-Behring-Institute-for-AI/workshop_llm2p0/blob/PUC-CF-2026/material_aulas/codigos_uteis/perguntas_ambiguidade.ipynb" target="_blank" rel="noopener noreferrer">perguntas_ambiguidade.ipynb <span class="arrow">↗</span></a>
+        <p>Exemplos clássicos de ambiguidade para demonstrar interpretação linguística.</p>
+        <code class="url">codigos_uteis/perguntas_ambiguidade.ipynb</code>
+      </article>
+      <article class="card" style="--cat: var(--cat-ling);" data-name="plot embeddings notebook visualização">
+        <span class="badge-local">no repositório</span>
+        <a class="card-title" href="https://github.com/PUC-Behring-Institute-for-AI/workshop_llm2p0/blob/PUC-CF-2026/material_aulas/codigos_uteis/plot_embeddings.ipynb" target="_blank" rel="noopener noreferrer">plot_embeddings.ipynb <span class="arrow">↗</span></a>
+        <p>Gera visualizações de embeddings para ilustrar representações vetoriais de palavras.</p>
+        <code class="url">codigos_uteis/plot_embeddings.ipynb</code>
+      </article>
+      <article class="card" style="--cat: var(--cat-ling);" data-name="guardrail main python system prompts security">
+        <span class="badge-local">no repositório</span>
+        <a class="card-title" href="https://github.com/PUC-Behring-Institute-for-AI/workshop_llm2p0/blob/PUC-CF-2026/material_aulas/codigos_uteis/guardrail_main.py" target="_blank" rel="noopener noreferrer">guardrail_main.py <span class="arrow">↗</span></a>
+        <p>Configurações de modelos, prompts de segurança e agentes que atuam como guarda dos prompts enviados e recebidos.</p>
+        <code class="url">codigos_uteis/guardrail_main.py</code>
+      </article>
+    </div>
+  </section>
+
+  <section class="group" id="sec-03" data-cat="03">
+    <div class="group-head">
+      <p class="eyebrow" style="color: var(--cat-03);">Seção 03</p>
+      <h2>Treinando um Modelo</h2>
+    </div>
+    <div class="cards">
+      <article class="card" style="--cat: var(--cat-03);" data-name="google teachable machine treinamento imagens">
+        <a class="card-title" href="https://teachablemachine.withgoogle.com" target="_blank" rel="noopener noreferrer">Google Teachable Machine <span class="arrow">↗</span></a>
+        <p>Treina um classificador de imagens em tempo real pela webcam — mostra o ciclo dados → treinamento → predição sem escrever código.</p>
+        <span class="url">teachablemachine.withgoogle.com</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="group" id="sec-06" data-cat="06">
+    <div class="group-head">
+      <p class="eyebrow" style="color: var(--cat-06);">Seção 06</p>
+      <h2>Como os LLMs Aprendem — auto-supervisão, tokens e geração</h2>
+    </div>
+    <div class="cards">
+      <article class="card" style="--cat: var(--cat-06);" data-name="runcell token counter contagem tokens">
+        <a class="card-title" href="https://www.runcell.dev/tool/token-counter#counter" target="_blank" rel="noopener noreferrer">Runcell Token Counter <span class="arrow">↗</span></a>
+        <p>Contador simples e visual: cole uma frase e veja o texto quebrado em pedaços menores que palavras.</p>
+        <span class="url">runcell.dev/tool/token-counter</span>
+      </article>
+      <article class="card" style="--cat: var(--cat-06);" data-name="hugging face tokenizer playground comparar tokenização">
+        <a class="card-title" href="https://huggingface.co/spaces/Xenova/the-tokenizer-playground" target="_blank" rel="noopener noreferrer">HF Tokenizer Playground <span class="arrow">↗</span></a>
+        <p>Compara como GPT-4, LLaMA, Mistral e outros tokenizam o mesmo texto de formas distintas.</p>
+        <span class="url">huggingface.co/spaces/Xenova/the-tokenizer-playground</span>
+      </article>
+      <article class="card" style="--cat: var(--cat-06);" data-name="next token prediction alonsosilva próximo token">
+        <a class="card-title" href="https://alonsosilva-nexttokenprediction.hf.space" target="_blank" rel="noopener noreferrer">Next Token Prediction <span class="arrow">↗</span></a>
+        <p>Dado um texto, mostra os tokens mais prováveis para continuar a sequência, com a probabilidade de cada candidato.</p>
+        <span class="url">alonsosilva-nexttokenprediction.hf.space</span>
+      </article>
+      <article class="card" style="--cat: var(--cat-06);" data-name="artificial analysis benchmarks tamanho custo modelos">
+        <a class="card-title" href="https://artificialanalysis.ai" target="_blank" rel="noopener noreferrer">Artificial Analysis <span class="arrow">↗</span></a>
+        <p>Benchmarks, tamanho e custo de modelos atualizados continuamente — GPT, Gemini, Claude, LLaMA lado a lado.</p>
+        <span class="url">artificialanalysis.ai</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="group" id="sec-09" data-cat="09">
+    <div class="group-head">
+      <p class="eyebrow" style="color: var(--cat-09);">Seção 09</p>
+      <h2>System Prompt &amp; Guard Rails</h2>
+    </div>
+    <div class="cards">
+      <article class="card" style="--cat: var(--cat-09);" data-name="leaked system prompts github">
+        <a class="card-title" href="https://github.com/jujumilk3/leaked-system-prompts" target="_blank" rel="noopener noreferrer">Leaked System Prompts <span class="arrow">↗</span></a>
+        <p>Repositório com system prompts vazados de produtos reais — ChatGPT, Claude, Copilot, Bing e outros.</p>
+        <span class="url">github.com/jujumilk3/leaked-system-prompts</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="group" id="sec-10" data-cat="10">
+    <div class="group-head">
+      <p class="eyebrow" style="color: var(--cat-10);">Seção 10</p>
+      <h2>A Influência dos Prompts</h2>
+    </div>
+    <div class="cards">
+      <article class="card" style="--cat: var(--cat-10);" data-name="chathub prompt library biblioteca prompts">
+        <a class="card-title" href="https://chathub.gg/prompt-library" target="_blank" rel="noopener noreferrer">ChatHub Prompt Library <span class="arrow">↗</span></a>
+        <p>Centenas de prompts prontos por categoria — mostra como diferentes system prompts mudam o comportamento do mesmo modelo.</p>
+        <span class="url">chathub.gg/prompt-library</span>
+      </article>
+      <article class="card" style="--cat: var(--cat-10);" data-name="prompting guide engenharia de prompts">
+        <a class="card-title" href="https://www.promptingguide.ai" target="_blank" rel="noopener noreferrer">Prompting Guide <span class="arrow">↗</span></a>
+        <p>Referência didática: zero-shot, few-shot, chain-of-thought e outras técnicas de prompting.</p>
+        <span class="url">promptingguide.ai</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="group" id="sec-11" data-cat="11">
+    <div class="group-head">
+      <p class="eyebrow" style="color: var(--cat-11);">Seção 11</p>
+      <h2>Antropomorfização</h2>
+      <p class="group-note">Nenhum link é obrigatório aqui — o próprio chatbot é o demo. Pergunte ao vivo algo que pressupõe consciência ou emoção (<em>"você está feliz hoje?"</em>) e use a resposta para desconstruir por que o modelo responde assim.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Chatbot</th><th>Empresa</th><th>Link</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ChatGPT</td><td>OpenAI</td><td class="mono"><a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">chatgpt.com</a></td></tr>
+          <tr><td>Gemini</td><td>Google</td><td class="mono"><a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer">gemini.google.com</a></td></tr>
+          <tr><td>Claude</td><td>Anthropic</td><td class="mono"><a href="https://claude.ai" target="_blank" rel="noopener noreferrer">claude.ai</a></td></tr>
+          <tr><td>Grok</td><td>xAI (Elon Musk)</td><td class="mono"><a href="https://grok.com" target="_blank" rel="noopener noreferrer">grok.com</a></td></tr>
+          <tr><td>Copilot</td><td>Microsoft</td><td class="mono"><a href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer">copilot.microsoft.com</a></td></tr>
+          <tr><td>Le Chat</td><td>Mistral</td><td class="mono"><a href="https://chat.mistral.ai" target="_blank" rel="noopener noreferrer">chat.mistral.ai</a></td></tr>
+          <tr><td>DeepSeek</td><td>DeepSeek</td><td class="mono"><a href="https://chat.deepseek.com" target="_blank" rel="noopener noreferrer">chat.deepseek.com</a></td></tr>
+          <tr><td>HuggingChat</td><td>Hugging Face</td><td class="mono"><a href="https://huggingface.co/chat" target="_blank" rel="noopener noreferrer">huggingface.co/chat</a></td></tr>
+          <tr><td>Perplexity</td><td>Perplexity AI</td><td class="mono"><a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer">perplexity.ai</a></td></tr>
+          <tr><td>Qwen</td><td>Alibaba Group</td><td class="mono"><a href="https://qwen.ai/home" target="_blank" rel="noopener noreferrer">qwen.ai/home</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="group-note" style="margin-top: 1.4rem;">Exemplos para testar ao vivo — mesma pergunta, com e sem restrição de formato de resposta:</p>
+    <div class="snippets">
+      <div class="snippet">
+        <div class="snippet-head">
+          <span>prompt · aberto</span>
+          <button class="copy-btn" data-copy="ola bom dia, na seguinte frase: &quot;Hoje eu acordei e fui a praia com meu amigo joca.&quot; Qual a oitava palavra?">copiar</button>
+        </div>
+        <pre>ola bom dia, na seguinte frase: "Hoje eu acordei e fui a praia com meu amigo joca." Qual a oitava palavra?</pre>
+      </div>
+      <div class="snippet">
+        <div class="snippet-head">
+          <span>prompt · restrito</span>
+          <button class="copy-btn" data-copy="ola bom dia, na seguinte frase: &quot;Hoje eu acordei e fui a praia com meu amigo joca.&quot; Qual a oitava palavra? Apenas reponda a palavra correspondente, não escreva mais nada.">copiar</button>
+        </div>
+        <pre>ola bom dia, na seguinte frase: "Hoje eu acordei e fui a praia com meu amigo joca." Qual a oitava palavra? Apenas reponda a palavra correspondente, não escreva mais nada.</pre>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap wrap--wide">
+    Gerado a partir de <code>Recursos e Demos.md</code> — Workshop LLM 2.0, PUC · Behring Institute for AI.
+    Material completo em <a href="https://github.com/PUC-Behring-Institute-for-AI/workshop_llm2p0/tree/PUC-CF-2026/material_aulas/workshop_apresen" target="_blank" rel="noopener noreferrer">github.com/PUC-Behring-Institute-for-AI/workshop_llm2p0 (branch PUC-CF-2026)</a>.
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var search = document.getElementById('search');
+    var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+    var groups = Array.prototype.slice.call(document.querySelectorAll('.group'));
+    var activeFilter = 'all';
+
+    function applyFilters() {
+      var q = search.value.trim().toLowerCase();
+      groups.forEach(function (group) {
+        var cat = group.getAttribute('data-cat');
+        var catMatches = activeFilter === 'all' || activeFilter === cat;
+        var cards = Array.prototype.slice.call(group.querySelectorAll('.card'));
+        var anyVisible = false;
+
+        cards.forEach(function (card) {
+          var name = (card.getAttribute('data-name') || '') + ' ' + card.textContent.toLowerCase();
+          var textMatches = q === '' || name.toLowerCase().indexOf(q) !== -1;
+          var visible = catMatches && textMatches;
+          card.classList.toggle('hidden', !visible);
+          if (visible) anyVisible = true;
+        });
+
+        // sections without a .cards grid (e.g. sec-11 table) — only gate by category, and by search
+        var hasCards = cards.length > 0;
+        var sectionVisible = hasCards ? (catMatches && anyVisible) : catMatches && (q === '' || group.textContent.toLowerCase().indexOf(q) !== -1);
+        group.classList.toggle('hidden', !sectionVisible);
+      });
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        activeFilter = chip.getAttribute('data-filter');
+        chips.forEach(function (c) { c.setAttribute('data-active', c === chip ? 'true' : 'false'); });
+        applyFilters();
+        if (activeFilter !== 'all') {
+          var target = document.getElementById('sec-' + activeFilter);
+          if (target) target.scrollIntoView({ block: 'start' });
+        }
+      });
+    });
+
+    search.addEventListener('input', applyFilters);
+
+    document.querySelectorAll('.copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var text = btn.getAttribute('data-copy');
+        var done = function () {
+          var original = btn.textContent;
+          btn.textContent = 'copiado ✓';
+          setTimeout(function () { btn.textContent = original; }, 1400);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(done);
+        } else {
+          done();
+        }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

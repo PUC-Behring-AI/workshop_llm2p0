@@ -202,6 +202,8 @@ Mas o paper é honesto sobre os limites: o InstructGPT ainda alucina, ainda prod
 
 > 💡 O RLHF não ensina o modelo o que é verdade. Ensina o que humanos preferem ouvir. Essa distinção será central quando discutirmos [[11 Antropomorfização]] — o modelo aprendeu a soar razoável e confiante porque isso é o que os anotadores classificaram como melhor. A fluência não implica veracidade; a confiança no tom não implica certeza no conteúdo.
 
+> 🛠️ **Demo ao vivo — completar × obedecer (Experimento A):** no servidor do workshop, envie *"Explique a teoria da relatividade"* a `falcon:text` (modelo base) e a `falcon:7b` (instruct). O primeiro continua o texto; o segundo responde. Roteiro em [[12 Demo Integrado e Fechamento#A — Completar vs. obedecer (após a seção 08)|Experimento A]].
+
 ---
 
 [[Índice]] | [[07 Como o Modelo Decide|← Anterior]] | [[09 System Prompt e Guard Rails|Próximo →]]

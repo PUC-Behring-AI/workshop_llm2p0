@@ -82,6 +82,8 @@ Três hábitos que seguem diretamente do que vimos:
 
 **Calibre o uso pela consequência do erro** — para brainstorming, rascunho inicial e tarefas criativas, alucinações são toleráveis ou até úteis. Para decisões com consequências reais, o LLM deve ser tratado como ponto de partida para investigação, não como fonte definitiva.
 
+> 🛠️ **O que a engenharia faz a respeito:** em vez de pedir ao modelo que "lembre", dá-se a ele **ferramentas** (busca, consulta a bases, calculadora, execução de código) e **verificações** — de modo que o fato venha de uma fonte rastreável e a conta, de um programa. Veja [[01.1 IA Hoje — Agentes e Engenharia]].
+
 > 💡 Voltaremos a esse tema na seção [[11 Antropomorfização]] — onde veremos como a fluência e a aparente confiança do modelo criam uma ilusão de compreensão que vai além das alucinações factuais.
 
 ---

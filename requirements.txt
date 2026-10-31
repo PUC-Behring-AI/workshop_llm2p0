@@ -18,4 +18,3 @@ sentence_transformers
 scikit-learn
 langchain
 langchain-ollama
-json

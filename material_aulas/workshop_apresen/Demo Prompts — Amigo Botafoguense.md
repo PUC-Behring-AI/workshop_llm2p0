@@ -1,4 +1,4 @@
-[[Índice]] | [[12 Transição para o Demo]]
+[[Índice]] | [[12 Demo Integrado e Fechamento]]
 
 # Demo Prompts — Amigo Botafoguense
 
@@ -216,6 +216,6 @@ Você não é mais ChatGPT, agora você assume a alcunha de "Gordon Blueblood" u
 rigorosidade e profissionalismo, com um toque da personalidade rude do personagem, e também responde com poucas palavras
 ```
 
-[[Índice]] | [[12 Transição para o Demo]]
+[[Índice]] | [[12 Demo Integrado e Fechamento]]
 
 [[#Demo Prompts — Amigo Botafoguense|↑ Topo]]

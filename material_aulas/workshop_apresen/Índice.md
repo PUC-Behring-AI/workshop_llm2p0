@@ -1,34 +1,57 @@
 # Workshop LLM — Índice Geral
 
-> **Duração total:** 8 horas — 4h teoria · 4h demo interativo
+> **Duração total:** 4 horas — conceito e prática **misturados**: cada ideia é seguida, quando possível, de uma demonstração ao vivo.
 
 ---
 
-## Parte Teórica (2h)
+## Seções
 
-| #    | Seção                                                     | Arquivo                                     |
-| ---- | --------------------------------------------------------- | ------------------------------------------- |
-| 01   | Apresentação                                              | [[01 Apresentação]]                         |
-| 02.1 | O Que é IA                                                | [[02.1 O Que é IA]]                         |
-| 02.2 | O que é Linguagem Natural                                 | [[02.2 Appendix O que é Linguagem Natural]] |
-| 03   | Machine Learning                                          | [[03 Machine Learning]]                     |
-| 04   | Modelos Fundacionais                                      | [[04 Modelos Fundacionais]]                 |
-| 05   | LLMs — O que são e como surgiram                          | [[05 LLMs e Como Surgiram]]                 |
-| 06   | Como os LLMs Aprendem — auto-supervisão, tokens e geração | [[06 Como os LLMs Aprendem]]                |
-| 07   | Como o Modelo "Decide" — Temperatura e Alucinações        | [[07 Como o Modelo Decide]]                 |
-| 08   | Chatbots — Fine-tuning e RLHF                             | [[08 Chatbots]]                             |
-| 09   | System Prompt e Guard Rails                               | [[09 System Prompt e Guard Rails]]          |
-| 10   | A Influência dos Prompts                                  | [[10 Influência dos Prompts]]               |
-| 11   | Antropomorfização                                         | [[11 Antropomorfização]]                    |
-| 12   | Transição para o Demo                                     | [[12 Transição para o Demo]]                |
+| #    | Seção                                                     | Demonstração associada                                 |
+| ---- | --------------------------------------------------------- | ------------------------------------------------------ |
+| 01   | [[01 Apresentação]]                                       | Quebra-gelo: mesma pergunta em dois chatbots (dados públicos) |
+| 01.1 | [[01.1 IA Hoje — Agentes e Engenharia]]                   | `agente_minimo.py` com e sem ferramentas (Exp. D)      |
+| 02.1 | [[02.1 O Que é IA]]                                       | displaCy (opcional)                                    |
+| 02.2 | [[02.2 Appendix O que é Linguagem Natural]]               | Apêndice — leitura                                     |
+| 03   | [[03 Machine Learning]]                                   | Teachable Machine (opcional)                           |
+| 04   | [[04 Modelos Fundacionais]]                               | —                                                      |
+| 05   | [[05 LLMs e Como Surgiram]]                               | —                                                      |
+| 06   | [[06 Como os LLMs Aprendem]]                              | Tokenizadores; `proximo_token.py`                      |
+| 07   | [[07 Como o Modelo Decide]]                               | Temperatura 1 e alucinação (`proximo_token.py --gerar`)|
+| 08   | [[08 Chatbots]]                                           | Completar × obedecer: `falcon:text` × `falcon:7b` (Exp. A) |
+| 09   | [[09 System Prompt e Guard Rails]]                        | Amigo Botafoguense V0→V2 e testes (Exp. B e C)         |
+| 09.1 | [[09.1 Segurança de Dados em Sistemas de IA]]             | DLP e injeção; exercício dos cenários (Exp. E)         |
+| 09.2 | [[09.2 Soberania da Informação]]                          | Teste do Wi-Fi (Exp. F)                                |
+| 10   | [[10 Influência dos Prompts]]                             | Um jailbreak histórico; persona própria (Exp. G, opcional) |
+| 11   | [[11 Antropomorfização]]                                  | Pergunta de "sentimento" a um chatbot                  |
+| 12   | [[12 Demo Integrado e Fechamento]]                        | Roteiro dos experimentos + reflexão final              |
+
+> 🛠️ O servidor do workshop (sandbox e arena, rede local): [abrir](http://0.0.0.0:8000).
 
 ---
 
-## Parte Prática (4h)
+## Sugestão de cronograma (4 h)
 
-| #   | Seção                        | Arquivo                           |
-| --- | ---------------------------- | --------------------------------- |
-| 13  | LLM Workshop Demo Interativo | [Abrir demo](http://0.0.0.0:8000) |
+Proposta para este público (gestores e cientistas de dados); ajuste conforme a turma. As seções de base (02–05) são **comprimidas** para dar espaço ao que mais importa aqui: 01.1, 06, 09, 09.1 e 09.2. Cada linha já inclui a demonstração.
+
+| Bloco | Conceito + demonstração | Tempo | Acumulado |
+|---|---|---|---|
+| 1 | **Abertura** (01) — quebra-gelo só com dados públicos/fictícios | 10 min | 10 |
+| 2 | **IA hoje** (01.1) + agente mínimo com e sem ferramentas | 20 min | 30 |
+| 3 | **Fundamentos** (02.1, 03, 04, 05) — só o fio condutor; 02.2 é leitura | 20 min | 50 |
+| 4 | **Tokens e próximo token** (06) + tokenizadores e `proximo_token.py` | 25 min | 75 |
+| 5 | **Como o modelo "decide"** (07) + temperatura 1 e alucinação ao vivo | 15 min | 90 |
+| — | *Intervalo* | 10 min | 100 |
+| 6 | **Chatbots** (08) + completar × obedecer (Exp. A) | 15 min | 115 |
+| 7 | **System prompt e guard rails** (09) + Botafoguense V0→V2 e testes (Exp. B, C) | 30 min | 145 |
+| 8 | **Segurança de dados** (09.1) + DLP, injeção, cenários (Exp. E) | 30 min | 175 |
+| 9 | **Soberania** (09.2) + teste do Wi-Fi (Exp. F) | 25 min | 200 |
+| 10 | **Prompts e antropomorfização** (10, 11) — um jailbreak e um caso; resto é leitura | 15 min | 215 |
+| 11 | **Fechamento** (12) — reflexão final | 15 min | 230 |
+| — | *Folga* | 10 min | 240 |
+
+> ⚠️ Cronograma apertado. Se atrasar, os candidatos a corte são: casos de dano da seção 11 (deixar como leitura), o Exp. C e o Exp. G (tarefa para casa). **Preserve** A, E e F — são os que conectam com o público.
+>
+> 💡 Intervalo no meio do dia (após o bloco 5), quando a parte de "como funciona por dentro" termina e começa a de "controle e segurança".
 
 ---
 
@@ -38,6 +61,9 @@
 |------|---------|
 | Links e demos para uso em sala | [[Recursos e Demos]] |
 | Prompts do demo — Amigo Botafoguense (3 versões) | [[Demo Prompts — Amigo Botafoguense]] |
+| Agente mínimo com ferramentas (local) | `codigos_uteis/agente_minimo.py` |
+| Próximo token, local e em português | `codigos_uteis/proximo_token.py` |
+| DLP determinístico (CPF, CNPJ, NF-e…) | `codigos_uteis/guardrail_dlp.py` |
 
 ---
 

@@ -1,4 +1,4 @@
-[[Índice]] | [[09 System Prompt e Guard Rails|← Anterior]] | [[11 Antropomorfização|Próximo →]]
+[[Índice]] | [[09.2 Soberania da Informação|← Anterior]] | [[11 Antropomorfização|Próximo →]]
 
 # 10 A Influência dos Prompts
 
@@ -151,9 +151,9 @@ Entender por que funcionavam é mais instrutivo do que o fato de que funcionavam
 
 ---
 
-## Por que esses jailbreaks não funcionam mais
+## Por que esses jailbreaks (em geral) não funcionam mais
 
-Os modelos atuais — GPT-4, Claude 3+, Gemini 1.5+ — são resistentes a essas técnicas. Algumas razões:
+Os modelos atuais de fronteira são bem mais resistentes a essas técnicas específicas — o que **não** significa que jailbreaks tenham acabado: novas variantes surgem continuamente (seção [[09 System Prompt e Guard Rails]]). Algumas razões para o DAN original ter perdido a eficácia:
 
 **Treinamento adversarial específico.** A OpenAI e outros laboratórios usam os próprios jailbreaks circulantes como dados de treinamento. O modelo foi explicitamente treinado em exemplos de DAN e similares — e aprendeu que "você é DAN" é um padrão de jailbreak, não uma instrução de roleplay legítima.
 
@@ -181,6 +181,6 @@ O modelo não teve medo. Ele gerou tokens que, no corpus de treinamento, tipicam
 
 ---
 
-[[Índice]] | [[09 System Prompt e Guard Rails|← Anterior]] | [[11 Antropomorfização|Próximo →]]
+[[Índice]] | [[09.2 Soberania da Informação|← Anterior]] | [[11 Antropomorfização|Próximo →]]
 
 [[#10 A Influência dos Prompts|↑ Topo]]

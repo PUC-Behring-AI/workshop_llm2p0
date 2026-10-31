@@ -10,13 +10,13 @@
 
 Todo o material de estudo está em [`material_aulas/workshop_apresen/`](material_aulas/workshop_apresen/).
 
-Comece pelo **[Índice Geral](material_aulas/workshop_apresen/Índice.md)** para navegar pelas 12 seções da parte teórica com links diretos para cada slide.
+Comece pelo **[Índice Geral](material_aulas/workshop_apresen/Índice.md)** para navegar pelas seções (12 principais + 01.1, 09.1 e 09.2) com links diretos para cada slide. Conceito e prática são intercalados: cada seção indica a demonstração associada.
 
 > Os arquivos `.md` são otimizados para [Obsidian](https://obsidian.md/), mas podem ser lidos em qualquer editor de texto ou diretamente no GitHub.
 
 ### Demo interativo
 
-Durante a parte prática (2h), o instrutor serve uma aplicação web na rede local.
+Nas demonstrações ao longo do workshop, o instrutor serve uma aplicação web na rede local.
 Acesse pelo endereço que o instrutor informar em sala — geralmente `http://192.168.x.x:8000`.
 
 ---
@@ -28,7 +28,7 @@ Acesse pelo endereço que o instrutor informar em sala — geralmente `http://19
 ```
 workshop_llm2p0/
 ├── material_aulas/      # Conteúdo do curso (slides, links, prompts de demo)
-└── workshop_server/     # Servidor web para a parte prática
+└── workshop_server/     # Servidor web usado nas demonstrações
 ```
 
 ### Setup rápido do servidor

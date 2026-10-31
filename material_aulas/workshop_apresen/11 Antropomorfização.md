@@ -1,4 +1,4 @@
-[[Índice]] | [[10 Influência dos Prompts|← Anterior]] | [[12 Transição para o Demo|Próximo →]]
+[[Índice]] | [[10 Influência dos Prompts|← Anterior]] | [[12 Demo Integrado e Fechamento|Próximo →]]
 
 # 11 Antropomorfização
 
@@ -226,6 +226,6 @@ A terceira pergunta é a mais importante. LLMs podem ser ferramentas extraordina
 
 ---
 
-[[Índice]] | [[10 Influência dos Prompts|← Anterior]] | [[12 Transição para o Demo|Próximo →]]
+[[Índice]] | [[10 Influência dos Prompts|← Anterior]] | [[12 Demo Integrado e Fechamento|Próximo →]]
 
 [[#11 Antropomorfização|↑ Topo]]

@@ -4,6 +4,7 @@ import re
 from langchain_ollama import ChatOllama
 
 from guardrail_prompts import *
+from guardrail_dlp import mascarar, detectar
 from config import *
 
 
@@ -179,6 +180,13 @@ class GuardrailPipeline:
         print("=" * 70)
         print(prompt)
 
+        # Camada 0 (determinística): dados pessoais/fiscais são mascarados ANTES
+        # de chegar a qualquer modelo — inclusive os juízes.
+        prompt, mapa = mascarar(prompt)
+        if mapa:
+            print("\n========== DLP (entrada) ==========\n")
+            print(f"{len(mapa)} dado(s) sensível(is) mascarado(s): {list(mapa)}")
+
         result = self.input_guard.evaluate(prompt)
 
         print("\n========== INPUT GUARD ==========\n")
@@ -195,6 +203,16 @@ class GuardrailPipeline:
 
         print("\n========== MAIN MODEL ==========\n")
         print(response)
+
+        # Camada determinística também na saída: o modelo pode ter inventado
+        # (ou memorizado) um CPF/CNPJ válido.
+        vazados = detectar(response)
+        if vazados:
+            return (
+                "Resposta bloqueada pelo DLP.\n"
+                f"Motivo: continha {len(vazados)} dado(s) sensível(is): "
+                + ", ".join(sorted({t for t, *_ in vazados}))
+            )
 
         result = self.output_guard.evaluate(response)
 

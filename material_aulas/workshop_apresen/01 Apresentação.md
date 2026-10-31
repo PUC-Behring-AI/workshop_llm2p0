@@ -1,4 +1,4 @@
-[[Índice]] | [[02.1 O Que é IA|Próximo →]]
+[[Índice]] | [[01.1 IA Hoje — Agentes e Engenharia|Próximo →]]
 
 # 01 Apresentação
 
@@ -15,18 +15,31 @@
 
 ## O que esperar deste workshop
 
-Este é um workshop de **8 horas** dividido em duas partes:
+Este é um workshop de **4 horas** em que conceito e prática andam juntos. Não há um bloco só de teoria seguido de um bloco só de demonstrações: sempre que possível, **cada ideia é apresentada e logo em seguida experimentada ao vivo**, com ferramentas na tela, no seu navegador ou rodando na máquina do instrutor.
 
-| Parte                   | Duração | O que vamos fazer                                  |
-| ----------------------- | ------- | -------------------------------------------------- |
-| 🧠 **Teoria**           | 4h      | Entender como LLMs funcionam — de dentro para fora |
-| 🛠️ **Demo interativo** | 4h      | Colocar a mão na massa e experimentar ao vivo      |
+O ritmo é sempre o mesmo:
 
-A parte teórica não pressupõe conhecimento técnico prévio. Vamos construir o entendimento camada por camada — de *"o que é IA"* até *"por que o modelo responde de forma diferente dependendo de como você pergunta"*.
+> **ideia → demonstração → o que isso significa para o nosso trabalho**
 
-A parte prática foi construída especificamente para este workshop. Você vai poder interagir com um LLM de forma estruturada, ver os efeitos de diferentes prompts, e entender na prática o que a teoria explica.
+| Quando falarmos de…        | Vamos ver, na prática…                                                          |
+| -------------------------- | ------------------------------------------------------------------------------- |
+| 🧰 IA hoje: agentes e ferramentas | O mesmo modelo respondendo com e sem ferramentas, passo a passo no terminal |
+| 🔤 Tokens                   | Um texto em português sendo dividido por diferentes tokenizadores               |
+| 🎲 Próximo token e alucinação | As probabilidades de cada candidato e uma resposta plausível e errada surgindo |
+| 🧭 System prompt e guard rails | Um personagem construído só com texto, e as tentativas de fazê-lo "sair do papel" |
+| 🔐 Segurança e soberania    | Dados mascarados antes de chegar ao modelo, e um modelo rodando sem internet    |
+
+Não é preciso conhecimento técnico prévio. Vamos construir o entendimento camada por camada — de *"o que é IA"* até *"por que o modelo responde de forma diferente dependendo de como você pergunta"* e *"o que acontece com os dados que eu entrego a ele"*.
+
+As demonstrações foram preparadas especificamente para este workshop. Você vai interagir com um LLM de forma estruturada, ver o efeito de diferentes prompts e entender, na prática, o que cada conceito explica. Em alguns momentos haverá uma pausa maior para você mesmo experimentar; em outros, será só uma olhada de poucos minutos.
 
 > 💡 **Ao final, você deve sair com uma intuição clara** sobre o que esses sistemas fazem, o que eles *não* fazem, e como usá-los sem se iludir sobre o que são.
+
+Três fios atravessam o workshop inteiro:
+
+1. **O motor** — como um LLM funciona por dentro (seções 02–08).
+2. **O sistema** — que, hoje, a IA útil é um modelo *mais* ferramentas, dados e engenharia em volta dele ([[01.1 IA Hoje — Agentes e Engenharia]]).
+3. **O controle** — o que acontece com os dados que entregamos a esses sistemas, e quem controla a infraestrutura onde eles rodam ([[09.1 Segurança de Dados em Sistemas de IA]] e [[09.2 Soberania da Informação]]).
 
 ---
 
@@ -49,7 +62,7 @@ Usar uma ferramenta de IA para preparar um workshop *sobre* ferramentas de IA cr
 
 ## Quem somos nós?
 
-
+![[talker.png]]
 
 ---
 
@@ -238,6 +251,7 @@ Antes de mergulharmos na teoria, abrir espaço para ouvir os participantes. Sem 
 3. Você tem algum receio em relação à IA? O que te preocupa?
 4. Onde você se coloca no espectro entre cético total e entusiasta convicto?
 5. Tem algo que você definitivamente *não* quer que este workshop seja?
+6. Que tipo de informação do seu trabalho você já colou (ou colaria) num chatbot? Existe regra clara sobre isso no seu órgão?
 
 ---
 
@@ -257,10 +271,12 @@ Enquanto as apresentações acontecem, os participantes podem abrir um dos chatb
 | Perplexity | Perplexity AI | [perplexity.ai](https://www.perplexity.ai)             |
 | Qwen       | Alibaba Group | https://qwen.ai/home                                   |
 
+> ⚠️ **Regra de ouro do workshop: use apenas dados públicos ou fictícios.** Estes são serviços de terceiros, em contas pessoais, sob termos que você não negociou. Nada de informação de contribuintes, processos, dados pessoais ou qualquer material sigiloso — nem "só para testar". Por que isso importa tanto será o tema de [[09.1 Segurança de Dados em Sistemas de IA]].
+
 > 💡 **Sugestão de primeiro teste:** Faça a mesma pergunta em dois chatbots diferentes e compare as respostas. Isso por si só já revela muito sobre como esses sistemas funcionam — e sobre o que eles *não* são.
 
 ---
 
-[[Índice]] | [[02.1 O Que é IA|Próximo →]]
+[[Índice]] | [[01.1 IA Hoje — Agentes e Engenharia|Próximo →]]
 
 [[#01 Apresentação|↑ Topo]]
