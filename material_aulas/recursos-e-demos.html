@@ -24,6 +24,9 @@
     --cat-09: #A5303F;        --cat-09-tint: #F5DEE1;
     --cat-10: #6A4FA0;        --cat-10-tint: #E7E0F3;
     --cat-11: #46701F;        --cat-11-tint: #E3EDD7;
+    --cat-01-1: #0E7490;        --cat-01-1-tint: #D8EDF3;
+    --cat-09-1: #B5521B;        --cat-09-1-tint: #F6E3D6;
+    --cat-09-2: #8B2F6E;        --cat-09-2-tint: #F1DFEA;
 
     --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", "Roboto Mono", Menlo, Consolas, monospace;
     --font-body: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -49,6 +52,9 @@
       --cat-09: #E5849A;        --cat-09-tint: rgba(229,132,154,0.14);
       --cat-10: #BBA4EC;        --cat-10-tint: rgba(187,164,236,0.14);
       --cat-11: #97C868;        --cat-11-tint: rgba(151,200,104,0.14);
+      --cat-01-1: #5CC4DB;        --cat-01-1-tint: rgba(92,196,219,0.14);
+      --cat-09-1: #F0A070;        --cat-09-1-tint: rgba(240,160,112,0.14);
+      --cat-09-2: #E08AC4;        --cat-09-2-tint: rgba(224,138,196,0.14);
     }
   }
   :root[data-theme="dark"] {
@@ -62,6 +68,9 @@
     --cat-09: #E5849A; --cat-09-tint: rgba(229,132,154,0.14);
     --cat-10: #BBA4EC; --cat-10-tint: rgba(187,164,236,0.14);
     --cat-11: #97C868; --cat-11-tint: rgba(151,200,104,0.14);
+    --cat-01-1: #5CC4DB; --cat-01-1-tint: rgba(92,196,219,0.14);
+    --cat-09-1: #F0A070; --cat-09-1-tint: rgba(240,160,112,0.14);
+    --cat-09-2: #E08AC4; --cat-09-2-tint: rgba(224,138,196,0.14);
   }
   :root[data-theme="light"] {
     --bg: #EEF0EC; --bg-raised: #FFFFFF; --bg-sunken: #E3E7DE;
@@ -74,6 +83,9 @@
     --cat-09: #A5303F; --cat-09-tint: #F5DEE1;
     --cat-10: #6A4FA0; --cat-10-tint: #E7E0F3;
     --cat-11: #46701F; --cat-11-tint: #E3EDD7;
+    --cat-01-1: #0E7490; --cat-01-1-tint: #D8EDF3;
+    --cat-09-1: #B5521B; --cat-09-1-tint: #F6E3D6;
+    --cat-09-2: #8B2F6E; --cat-09-2-tint: #F1DFEA;
   }
 
   * { box-sizing: border-box; }
@@ -331,13 +343,13 @@
     <p class="eyebrow">Workshop LLM 2.0 — material de apoio</p>
     <h1>Recursos <span>&amp;</span> Demos</h1>
     <p class="lede">
-      Links e ferramentas usados ao vivo durante a apresentação teórica, na ordem em que aparecem.
+      Links e ferramentas usados ao vivo durante a apresentação, na ordem em que aparecem.
       Use a busca ou os filtros abaixo para achar rápido o demo da seção em que estamos.
     </p>
     <div class="stat-row">
-      <span><strong id="stat-total">16</strong> recursos</span>
+      <span><strong id="stat-total">29</strong> recursos</span>
       <span><strong>10</strong> chatbots comparados</span>
-      <span><strong>6</strong> seções</span>
+      <span><strong>9</strong> seções</span>
       <span><a href="https://github.com/PUC-Behring-Institute-for-AI/workshop_llm2p0/tree/PUC-CF-2026/material_aulas/workshop_apresen" target="_blank" rel="noopener noreferrer">repositório no GitHub ↗</a></span>
     </div>
   </div>
@@ -348,10 +360,13 @@
     <input class="search" id="search" type="text" placeholder="Buscar recurso…" aria-label="Buscar recurso">
     <div class="chips" id="chips" role="tablist" aria-label="Filtrar por seção">
       <button class="chip" data-filter="all" data-active="true">Todos</button>
+      <button class="chip" data-filter="01-1" style="--chip-tint: var(--cat-01-1-tint); --chip-color: var(--cat-01-1);">01.1</button>
       <button class="chip" data-filter="ling" style="--chip-tint: var(--cat-ling-tint); --chip-color: var(--cat-ling);">Linguagem</button>
       <button class="chip" data-filter="03" style="--chip-tint: var(--cat-03-tint); --chip-color: var(--cat-03);">03</button>
       <button class="chip" data-filter="06" style="--chip-tint: var(--cat-06-tint); --chip-color: var(--cat-06);">06</button>
       <button class="chip" data-filter="09" style="--chip-tint: var(--cat-09-tint); --chip-color: var(--cat-09);">09</button>
+      <button class="chip" data-filter="09-1" style="--chip-tint: var(--cat-09-1-tint); --chip-color: var(--cat-09-1);">09.1</button>
+      <button class="chip" data-filter="09-2" style="--chip-tint: var(--cat-09-2-tint); --chip-color: var(--cat-09-2);">09.2</button>
       <button class="chip" data-filter="10" style="--chip-tint: var(--cat-10-tint); --chip-color: var(--cat-10);">10</button>
       <button class="chip" data-filter="11" style="--chip-tint: var(--cat-11-tint); --chip-color: var(--cat-11);">11</button>
     </div>
@@ -359,6 +374,31 @@
 </nav>
 
 <main class="wrap wrap--wide">
+
+  <section class="group" id="sec-01-1" data-cat="01-1">
+    <div class="group-head">
+      <p class="eyebrow" style="color: var(--cat-01-1);">Seção 01.1</p>
+      <h2>IA Hoje — Agentes, Ferramentas e Engenharia</h2>
+    </div>
+    <div class="cards">
+      <article class="card" style="--cat: var(--cat-01-1);" data-name="agente mínimo tool calling ferramentas ollama python">
+        <span class="badge-local">no repositório</span>
+        <span class="card-title">agente_minimo.py</span>
+        <p>Agente com <em>tool calling</em> em menos de 200 linhas, só biblioteca padrão, 100% local no Ollama. Rode com e sem <code>--sem-ferramentas</code> e compare. Dados fictícios.</p>
+        <code class="url">codigos_uteis/agente_minimo.py</code>
+      </article>
+      <article class="card" style="--cat: var(--cat-01-1);" data-name="anthropic building effective agents workflows agentes">
+        <a class="card-title" href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener noreferrer">Building effective agents <span class="arrow">↗</span></a>
+        <p>Texto de referência sobre a diferença entre <em>workflows</em> (caminho definido por código) e <em>agentes</em> (caminho decidido pelo modelo), e sobre começar pelo mais simples.</p>
+        <span class="url">anthropic.com/research/building-effective-agents</span>
+      </article>
+      <article class="card" style="--cat: var(--cat-01-1);" data-name="model context protocol mcp conectores">
+        <a class="card-title" href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer">Model Context Protocol <span class="arrow">↗</span></a>
+        <p>Padrão aberto para conectar assistentes a ferramentas e fontes de dados. Cada conector é também uma nova superfície de risco.</p>
+        <span class="url">modelcontextprotocol.io</span>
+      </article>
+    </div>
+  </section>
 
   <section class="group" id="sec-ling" data-cat="ling">
     <div class="group-head">
@@ -448,6 +488,32 @@
         <p>O GPT-2 roda no seu navegador: digite um texto e veja tokenização, embeddings, atenção e a distribuição do próximo token, com a temperatura ajustável.</p>
         <span class="url">poloclub.github.io/transformer-explainer</span>
       </article>
+      <article class="card" style="--cat: var(--cat-06);" data-name="proximo token python ollama probabilidades temperatura">
+        <span class="badge-local">no repositório</span>
+        <span class="card-title">proximo_token.py</span>
+        <p>Plano B offline do Next Token Prediction: candidatos a próximo token com probabilidades, em português, usando o Ollama. Com <code>-t</code> mostra o efeito da temperatura.</p>
+        <code class="url">codigos_uteis/proximo_token.py</code>
+      </article>
+      <article class="card" style="--cat: var(--cat-06);" data-name="llm visualization bbycroft 3d">
+        <a class="card-title" href="https://bbycroft.net/llm" target="_blank" rel="noopener noreferrer">LLM Visualization <span class="arrow">↗</span></a>
+        <p>Passeio em 3D por um LLM pequeno, camada a camada. Use como "olhem quanta coisa há aqui dentro" por 2 minutos.</p>
+        <span class="url">bbycroft.net/llm</span>
+      </article>
+      <article class="card" style="--cat: var(--cat-06);" data-name="tiktokenizer tokens ids modelos">
+        <a class="card-title" href="https://tiktokenizer.vercel.app" target="_blank" rel="noopener noreferrer">Tiktokenizer <span class="arrow">↗</span></a>
+        <p>Mostra tokens <strong>e IDs</strong> para vários modelos; bom complemento ao Playground do Hugging Face.</p>
+        <span class="url">tiktokenizer.vercel.app</span>
+      </article>
+      <article class="card" style="--cat: var(--cat-06);" data-name="embedding projector tensorflow embeddings 3d">
+        <a class="card-title" href="https://projector.tensorflow.org" target="_blank" rel="noopener noreferrer">Embedding Projector <span class="arrow">↗</span></a>
+        <p>Nuvem 3D de embeddings (Word2Vec etc.) para a parte final da seção; combina com o notebook <code>plot_embeddings.ipynb</code>.</p>
+        <span class="url">projector.tensorflow.org</span>
+      </article>
+      <article class="card" style="--cat: var(--cat-06);" data-name="3blue1brown redes neurais aprofundar">
+        <a class="card-title" href="https://www.3blue1brown.com/topics/neural-networks" target="_blank" rel="noopener noreferrer">3Blue1Brown — Redes Neurais <span class="arrow">↗</span></a>
+        <p>Referência para quem quiser aprofundar depois do workshop (indicação, não demo ao vivo).</p>
+        <span class="url">3blue1brown.com/topics/neural-networks</span>
+      </article>
       <article class="card" style="--cat: var(--cat-06);" data-name="artificial analysis benchmarks tamanho custo modelos">
         <a class="card-title" href="https://artificialanalysis.ai" target="_blank" rel="noopener noreferrer">Artificial Analysis <span class="arrow">↗</span></a>
         <p>Benchmarks, tamanho e custo de modelos atualizados continuamente — GPT, Gemini, Claude, LLaMA lado a lado.</p>
@@ -466,6 +532,51 @@
         <a class="card-title" href="https://github.com/jujumilk3/leaked-system-prompts" target="_blank" rel="noopener noreferrer">Leaked System Prompts <span class="arrow">↗</span></a>
         <p>Repositório com system prompts vazados de produtos reais — ChatGPT, Claude, Copilot, Bing e outros.</p>
         <span class="url">github.com/jujumilk3/leaked-system-prompts</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="group" id="sec-09-1" data-cat="09-1">
+    <div class="group-head">
+      <p class="eyebrow" style="color: var(--cat-09-1);">Seção 09.1</p>
+      <h2>Segurança de Dados em Sistemas de IA</h2>
+    </div>
+    <div class="cards">
+      <article class="card" style="--cat: var(--cat-09-1);" data-name="guardrail dlp cpf cnpj nf-e mascarar python">
+        <span class="badge-local">no repositório</span>
+        <span class="card-title">guardrail_dlp.py</span>
+        <p>Detecta e mascara CPF, CNPJ, chave de NF-e, e-mail e telefone, validando os dígitos verificadores. Tente "enganar" o filtro e discuta por que ele é uma camada, não a solução.</p>
+        <code class="url">codigos_uteis/guardrail_dlp.py</code>
+      </article>
+      <article class="card" style="--cat: var(--cat-09-1);" data-name="resumir pdf tika injeção prompt injection parecer contaminado">
+        <span class="badge-local">no repositório</span>
+        <span class="card-title">resumir_pdf.py</span>
+        <p>PDF → Apache Tika → resumo por LLM local. Três PDFs idênticos na tela (limpo, contaminado e contaminado com envio): os contaminados trazem texto escondido que muda o resumo ou simula uma chamada de e-mail. Precisa de Java.</p>
+        <code class="url">codigos_uteis/resumir_pdf.py</code>
+      </article>
+      <article class="card" style="--cat: var(--cat-09-1);" data-name="lethal trifecta simon willison vazamento agentes">
+        <a class="card-title" href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/" target="_blank" rel="noopener noreferrer">The lethal trifecta <span class="arrow">↗</span></a>
+        <p>Por que agentes que combinam dados privados, conteúdo não confiável e canal de saída são vulneráveis a vazamento.</p>
+        <span class="url">simonwillison.net/2025/Jun/16/the-lethal-trifecta</span>
+      </article>
+      <article class="card" style="--cat: var(--cat-09-1);" data-name="owasp top 10 llm aplicações riscos">
+        <a class="card-title" href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener noreferrer">OWASP Top 10 for LLM Apps <span class="arrow">↗</span></a>
+        <p>Catálogo de riscos de aplicações com LLM: injeção de prompt, divulgação de informação sensível, agência excessiva, cadeia de suprimentos etc.</p>
+        <span class="url">genai.owasp.org/llm-top-10</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="group" id="sec-09-2" data-cat="09-2">
+    <div class="group-head">
+      <p class="eyebrow" style="color: var(--cat-09-2);">Seção 09.2</p>
+      <h2>Soberania da Informação</h2>
+    </div>
+    <div class="cards">
+      <article class="card" style="--cat: var(--cat-09-2);" data-name="ollama soberania local wi-fi inferência">
+        <a class="card-title" href="https://ollama.com" target="_blank" rel="noopener noreferrer">Ollama — o demo como exemplo de soberania <span class="arrow">↗</span></a>
+        <p>Servidor de inferência local usado no demo. Atividade: desligar o Wi-Fi e continuar conversando com o modelo.</p>
+        <span class="url">ollama.com</span>
       </article>
     </div>
   </section>
