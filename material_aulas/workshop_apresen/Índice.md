@@ -49,7 +49,7 @@ Proposta para este público (gestores e cientistas de dados); ajuste conforme a 
 | 11 | **Fechamento** (12) — reflexão final | 15 min | 235 |
 | — | *Folga* | 5 min | 240 |
 
-> ⚠️ Cronograma apertado. Se atrasar, os candidatos a corte são: casos de dano da seção 11 (deixar como leitura), o Exp. C e o Exp. G (tarefa para casa). **Preserve** A, E e F — são os que conectam com o público.
+> ⚠️ Cronograma apertado. Se atrasar, os candidatos a corte são: casos de dano da seção 11 (deixar como leitura), o Exp. C e o Exp. G (tarefa para casa). Na 09.1, "Memorização não é teoria", "Dez perguntas antes de contratar ou liberar" e a atividade "Classifique os cenários" já estão marcadas como leitura complementar ou para casa; na 09.2, "Pesos abertos" e "Mitos comuns". **Preserve** A, E e F — são os que conectam com o público.
 >
 > 💡 Intervalo no meio do dia (após o bloco 5), quando a parte de "como funciona por dentro" termina e começa a de "controle e segurança".
 

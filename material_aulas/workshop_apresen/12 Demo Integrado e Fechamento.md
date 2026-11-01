@@ -168,7 +168,7 @@ Rode [`agente_minimo.py`](../codigos_uteis/agente_minimo.py) com e sem `--sem-fe
 
 ### F — Teste do Wi-Fi (durante a seção 09.2)
 
-Desligue a rede e continue conversando com o modelo local. Discussão: o que mudou? O que isso nos diz sobre *para onde vai* o que digitamos nos chatbots da lista? E o que o "local" **não** resolve (injeção, logs, controle de acesso)?
+Desligue a rede e continue conversando com o modelo local. Faça o teste no notebook do instrutor, projetado: se os participantes acessam o sandbox pela rede, desligar o Wi-Fi corta o acesso deles. Discussão: o que mudou? O que isso nos diz sobre *para onde vai* o que digitamos nos chatbots da lista? E o que o "local" **não** resolve (injeção, logs, controle de acesso)?
 
 ### G — Construindo seu próprio personagem (opcional)
 
