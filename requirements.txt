@@ -20,5 +20,6 @@ langchain
 langchain-ollama
 
 # Demo de resumo de PDF / injeção de prompt (codigos_uteis/resumir_pdf.py): extração com Apache Tika.
-# Exige Java 8+ instalado (o tika-python sobe um servidor Java local).
+# O pacote 'tika' NÃO traz o Java: é preciso ter Java 8+ instalado.
+# Como instalar e como rodar: material_aulas/codigos_uteis/README.md
 tika

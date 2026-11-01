@@ -31,12 +31,46 @@ workshop_llm2p0/
 └── workshop_server/     # Servidor web usado nas demonstrações
 ```
 
+### Ambiente Python (recomendado: um ambiente isolado)
+
+Use um gerenciador de ambientes para não misturar as dependências do workshop com as do sistema. Escolha **uma** das opções (Python 3.10 ou superior; o demo de PDF foi testado com 3.12).
+
+**Opção A — pyenv + venv**
+
+```bash
+# instalar o pyenv (macOS); em Linux, veja https://github.com/pyenv/pyenv
+brew install pyenv
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc && exec zsh    # ativa o pyenv no shell
+
+pyenv install 3.12            # baixa e compila o Python 3.12
+pyenv local 3.12              # fixa a versão nesta pasta (cria .python-version)
+
+python -m venv .venv          # cria o ambiente
+source .venv/bin/activate     # ativa (no Windows: .venv\Scripts\activate)
+pip install -r requirements.txt
+```
+
+**Opção B — conda / mamba**
+
+```bash
+conda create -n llmapp python=3.12
+conda activate llmapp
+conda install -c conda-forge openjdk
+pip install -r requirements.txt
+```
+
+Para sair do ambiente: `deactivate` (venv) ou `conda deactivate`.
+
+### Scripts e notebooks de apoio (`codigos_uteis/`)
+
+Cada script e notebook, com suas dependências, o modelo do Ollama de que precisa e como rodar, está descrito em [`material_aulas/codigos_uteis/README.md`](material_aulas/codigos_uteis/README.md). Atenção: o demo de resumo de PDF (Apache Tika) exige **Java 8+** instalado, e o `pip` não o instala; as instruções estão nesse README.
+
 ### Setup rápido do servidor
 
 Ver instruções detalhadas em [`workshop_server/README.md`](workshop_server/README.md).
 
 ```bash
-# 1. Instalar dependências
+# 1. Instalar dependências (com o ambiente Python ativo — veja acima)
 pip install -r requirements.txt
 
 # 2. Iniciar o Ollama (em outro terminal)
