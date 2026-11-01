@@ -87,10 +87,10 @@ def mostrar_amostras(candidatos, temperatura: float, n: int):
 
 
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser()
-    ap.add_argument("texto")
-    ap.add_argument("--modelo", default="qwen3:8b")
-    ap.add_argument("-k", type=int, default=10)
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("texto", help="início do texto a ser continuado")
+    ap.add_argument("--modelo", default="qwen3:8b", help="modelo do Ollama (padrão: qwen3:8b)")
+    ap.add_argument("-k", type=int, default=10, help="quantos candidatos mostrar (padrão: 10)")
     ap.add_argument("--gerar", type=int, default=0, help="quantos tokens gerar, um a um")
     ap.add_argument("-t", "--temperatura", type=float, default=None,
                     help="temperatura (0 = sempre o mais provável; 1 = distribuição original do modelo). "

@@ -8,7 +8,8 @@ verificador não. Defesa em profundidade = as duas camadas.
 Detecta, com validação de dígitos verificadores (menos falsos positivos):
 CPF, CNPJ, chave de acesso de NF-e (44 dígitos), e-mail e telefone BR.
 
-    python guardrail_dlp.py        # roda a demonstração
+    python guardrail_dlp.py                      # roda a demonstração
+    python guardrail_dlp.py "texto com CPF 123.456.789-09"   # mascara o texto informado
 """
 
 import re
@@ -113,7 +114,12 @@ def reidentificar(texto: str, mapa: dict) -> str:
 
 
 if __name__ == "__main__":
-    exemplo = (
+    import argparse
+
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("texto", nargs="?", help="texto a mascarar (sem argumento, usa um exemplo fictício)")
+    args = ap.parse_args()
+    exemplo = args.texto or (
         "Contribuinte 123.456.789-09 (CNPJ 11.222.333/0001-81), contato maria@exemplo.gov.br, "
         "(21) 99876-5432. Número que parece CPF mas é inválido: 123.456.789-00."
     )

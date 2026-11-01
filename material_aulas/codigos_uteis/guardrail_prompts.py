@@ -46,3 +46,11 @@ Retorne SOMENTE JSON.
 "reason":"..."
 }
 """
+
+if __name__ == "__main__":
+    import argparse
+
+    argparse.ArgumentParser(
+        description="Módulo de apoio: prompts dos modelos-juiz (entrada e saída). "
+                    "Não é executado diretamente: use  python guardrail_main.py"
+    ).parse_args()

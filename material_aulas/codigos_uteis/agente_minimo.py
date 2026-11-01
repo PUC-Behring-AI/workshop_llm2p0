@@ -12,6 +12,7 @@ ferramenta; quem EXECUTA, valida, limita e registra é o nosso código.
 Os dados abaixo são FICTÍCIOS. Nada sai desta máquina.
 """
 
+import argparse
 import ast
 import json
 import operator
@@ -184,11 +185,13 @@ def agente(pergunta, com_ferramentas=True):
 
 
 if __name__ == "__main__":
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    ferramentas = "--sem-ferramentas" not in sys.argv
-    perguntas = args or [
-        input("Pergunta: "),
-    ]
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("perguntas", nargs="*", help="uma ou mais perguntas (sem argumentos, pergunta no terminal)")
+    ap.add_argument("--sem-ferramentas", action="store_true",
+                    help="mesmo modelo, sem o laço de ferramentas (para comparar)")
+    a = ap.parse_args()
+    ferramentas = not a.sem_ferramentas
+    perguntas = a.perguntas or [input("Pergunta: ")]
     for q in perguntas:
         t0 = time.time()
         print(f"\nPergunta: {q}\n(modelo={MODELO}, ferramentas={'sim' if ferramentas else 'não'})")

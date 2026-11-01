@@ -1,18 +1,31 @@
-from guardrail_agents import GuardrailPipeline
+"""
+Chat com o pipeline de guardrails (DLP + modelo-juiz de entrada + modelo principal + modelo-juiz de saída).
 
-pipeline = GuardrailPipeline()
+    python guardrail_main.py        # abre o chat no terminal; digite "exit" para sair
 
-while True:
+Os modelos usados estão em config.py (Ollama local). Use apenas dados públicos ou fictícios.
+"""
 
-    print()
+import argparse
 
-    prompt = input("Você: ")
+if __name__ == "__main__":
+    argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
 
-    if prompt.lower() == "exit":
-        break
+    from guardrail_agents import GuardrailPipeline  # importado depois, para o --help ser rápido
 
-    resposta = pipeline.run(prompt)
+    pipeline = GuardrailPipeline()
 
-    print()
-    print("IA:")
-    print(resposta)
+    while True:
+
+        print()
+
+        prompt = input("Você: ")
+
+        if prompt.lower() == "exit":
+            break
+
+        resposta = pipeline.run(prompt)
+
+        print()
+        print("IA:")
+        print(resposta)

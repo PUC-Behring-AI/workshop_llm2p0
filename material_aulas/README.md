@@ -16,7 +16,7 @@ Comece pelo **[Índice Geral](workshop_apresen/Índice.md)** — ele lista todas
 | `workshop_apresen/figs/` | Imagens e diagramas usados nos slides |
 | `workshop_apresen/Recursos e Demos.md` | Links para demos externos usados durante a apresentação |
 | `prompt_exemplos/` | 3 versões do prompt "Amigo Botafoguense" — usado no demo ao vivo |
-| `codigos_uteis/` | Notebooks e scripts de apoio: guardrails com LLM, DLP determinístico (`guardrail_dlp.py`), agente mínimo com ferramentas (`agente_minimo.py`) |
+| `codigos_uteis/` | Notebooks e scripts de apoio: guardrails com LLM, DLP determinístico (`guardrail_dlp.py`), agente mínimo com ferramentas (`agente_minimo.py`), resumo de PDF com Tika e demo de injeção de prompt (`resumir_pdf.py` e os PDFs `parecer_limpo`, `parecer_contaminado`, `parecer_contaminado_envio`) |
 
 ## Programa resumido
 

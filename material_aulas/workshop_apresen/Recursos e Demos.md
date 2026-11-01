@@ -25,6 +25,7 @@
 | 06 | Artificial Analysis | Benchmarks e custo de modelos |
 | 09 | Leaked System Prompts | System prompts |
 | 09.1 | guardrail_dlp.py | DLP determinístico (CPF, CNPJ, NF-e) |
+| 09.1 | resumir_pdf.py | PDF → Apache Tika → resumo por LLM local; o PDF contaminado tem texto escondido que muda o resultado (prompt injection) |
 | 09.1 | The lethal trifecta | Vazamento em agentes |
 | 09.1 | OWASP Top 10 for LLM Apps | Catálogo de riscos |
 | 09.2 | Ollama (demo local) | Soberania na prática |

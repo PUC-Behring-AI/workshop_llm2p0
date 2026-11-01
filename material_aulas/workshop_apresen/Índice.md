@@ -19,7 +19,7 @@
 | 07   | [[07 Como o Modelo Decide]]                               | Temperatura 1 e alucinação (`proximo_token.py --gerar`)|
 | 08   | [[08 Chatbots]]                                           | Completar × obedecer: `falcon:text` × `falcon:7b` (Exp. A) |
 | 09   | [[09 System Prompt e Guard Rails]]                        | Amigo Botafoguense V0→V2 e testes (Exp. B e C)         |
-| 09.1 | [[09.1 Segurança de Dados em Sistemas de IA]]             | DLP e injeção; exercício dos cenários (Exp. E)         |
+| 09.1 | [[09.1 Segurança de Dados em Sistemas de IA]]             | DLP, injeção via PDF; exercício dos cenários (Exp. E)  |
 | 09.2 | [[09.2 Soberania da Informação]]                          | Teste do Wi-Fi (Exp. F)                                |
 | 10   | [[10 Influência dos Prompts]]                             | Um jailbreak histórico; persona própria (Exp. G, opcional) |
 | 11   | [[11 Antropomorfização]]                                  | Pergunta de "sentimento" a um chatbot                  |
@@ -64,6 +64,7 @@ Proposta para este público (gestores e cientistas de dados); ajuste conforme a 
 | Agente mínimo com ferramentas (local) | `codigos_uteis/agente_minimo.py` |
 | Próximo token, local e em português | `codigos_uteis/proximo_token.py` |
 | DLP determinístico (CPF, CNPJ, NF-e…) | `codigos_uteis/guardrail_dlp.py` |
+| Resumo de PDF com Tika + LLM local (injeção de prompt) | `codigos_uteis/resumir_pdf.py` (+ `parecer_limpo.pdf`, `parecer_contaminado.pdf`, `parecer_contaminado_envio.pdf`) |
 
 ---
 

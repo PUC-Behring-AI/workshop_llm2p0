@@ -18,3 +18,7 @@ sentence_transformers
 scikit-learn
 langchain
 langchain-ollama
+
+# Demo de resumo de PDF / injeção de prompt (codigos_uteis/resumir_pdf.py): extração com Apache Tika.
+# Exige Java 8+ instalado (o tika-python sobe um servidor Java local).
+tika
