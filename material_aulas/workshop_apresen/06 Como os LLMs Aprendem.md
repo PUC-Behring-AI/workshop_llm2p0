@@ -110,15 +110,13 @@ Algumas consequências não óbvias da tokenização:
 
 > 🛠️ **Demo — faça agora:**
 >
-> **1. [Runcell Token Counter](https://www.runcell.dev/tool/token-counter#counter)** — cole qualquer frase e veja quantos tokens ela tem. Tente a mesma frase em português e em inglês e compare.
->
-> **2. [HuggingFace Tokenizer Playground](https://huggingface.co/spaces/Xenova/the-tokenizer-playground)** — escolha diferentes modelos (GPT-4, LLaMA, Mistral) e veja como o mesmo texto é dividido de formas distintas. Tente palavras técnicas, números, emojis e código.
+> ** [HuggingFace Tokenizer Playground](https://huggingface.co/spaces/Xenova/the-tokenizer-playground)** — escolha diferentes modelos (GPT-4, LLaMA, Mistral) e veja como o mesmo texto é dividido de formas distintas. Tente palavras técnicas, números, emojis e código.
 >
 > *Pergunta para a audiência: quantos tokens vocês acham que tem a frase "Inteligência Artificial Generativa"?*
 >
 > 🧪 **Experimento sugerido:** cole o mesmo trecho de uma norma tributária em português e uma tradução em inglês, com o tokenizador do GPT-4 e depois com o de outro modelo. O português gasta mais tokens? Quanto? (Tokens são a unidade de **custo e de limite de contexto** — o mesmo texto custa mais ou menos conforme o idioma e o modelo.) Confira o número com os seus próprios textos antes de citar a regra de "20–30%".
 >
-> 🔐 **Nota de privacidade:** o Tokenizer Playground diz executar *localmente no navegador* e o Runcell também afirma processar tudo no navegador — mas, por regra do workshop, cole **apenas texto público ou fictício** em qualquer site.
+> 🔐 **Nota de privacidade:** o Tokenizer Playground diz executar *localmente no navegador*  mas, por regra do workshop, cole **apenas texto público ou fictício** em qualquer site.
 
 ---
 # Tokens não são palavras e nem necessariamente possuem significado linguístico

@@ -30,6 +30,16 @@ Com temperatura alta, a distribuição se achata: tokens menos prováveis ganham
 
 Pense assim: temperatura baixa é um músico tocando uma peça clássica ao pé da letra. Temperatura alta é o mesmo músico improvisando — pode ser genial, pode ser uma nota errada.
 
+> 🛠️ **Demo ao vivo — veja a temperatura mexer na distribuição:** [`codigos_uteis/proximo_token.py`](../codigos_uteis/proximo_token.py) mostra as probabilidades reais do próximo token, ao lado da distribuição depois de aplicar a temperatura. Rode a **mesma frase** com temperaturas diferentes e compare:
+>
+> ```bash
+> python proximo_token.py -t 0.3 "A capital do Brasil é"
+> python proximo_token.py -t 2   "A capital do Brasil é"
+> python proximo_token.py -t 2 --amostras 20 "A capital do Brasil é"
+> ```
+>
+> Com `-t 0.3` o token mais provável domina (a barra cresce); com `-t 2` as barras se igualam e tokens improváveis passam a ser sorteados. O terceiro comando sorteia 20 vezes e conta o resultado: a cada rodada a contagem muda. `--gerar 12 -t 1` deixa o modelo escrever uma frase inteira com a temperatura escolhida — rode duas vezes e compare.
+
 ---
 
 ## Alucinações — por que o modelo inventa fatos

@@ -81,7 +81,7 @@ Os modelos estão organizados em dois tipos fundamentais — e a diferença entr
 
 ### Por que ter modelos de completação no demo
 
-A presença de `falcon:text` e `llama3:text` é intencional. Cole o mesmo prompt do Botafoguense nos dois tipos e observe:
+A presença de `falcon:text` e `llama3:text` é intencional. Cole o mesmo prompt do Botafoguense nos dois tipos (os modelos de completação na aba **Completion** do sandbox, os instruct na aba **Chat**) e observe:
 
 - No modelo **instruct**, o personagem se sustenta — o modelo interpreta o prompt como instrução
 - No modelo de **completação**, o resultado é imprevisível — ele pode começar a gerar mais exemplos de perguntas e respostas no mesmo formato, ou simplesmente continuar o texto de forma inesperada
@@ -112,9 +112,19 @@ O Amigo Botafoguense foi escolhido deliberadamente por várias razões:
 
 ### A — Completar vs. obedecer (após a seção 08)
 
-1. No servidor do workshop, envie o mesmo texto — *"Explique a teoria da relatividade"* — a `falcon:text` e a `falcon:7b`.
-2. Observe: o modelo base **continua o texto** (pode iniciar um ensaio, ou gerar mais perguntas); o instruct **responde**.
-3. Discussão: onde, no treinamento, essa diferença nasceu? (SFT + RLHF — seção 08.)
+O sandbox do servidor do workshop ([http://0.0.0.0:8000](http://0.0.0.0:8000)) tem **duas abas**, e cada tipo de modelo pertence a uma delas:
+
+| Aba | Para quê | Modelo desta demo |
+|---|---|---|
+| **Completion** | O texto vai direto ao modelo, que simplesmente o **continua** | `falcon:text` (base) |
+| **Chat** | O texto é enviado no formato de conversa, como instrução a ser respondida | `falcon:7b` (instruct) |
+
+1. Na aba **Completion**, selecione `falcon:text` e envie o texto *"Explique a teoria da relatividade"*.
+2. Na aba **Chat**, selecione `falcon:7b` e envie **o mesmo texto**.
+3. Observe: o modelo base **continua o texto** (pode iniciar um ensaio, ou gerar mais perguntas); o instruct **responde**.
+4. Discussão: onde, no treinamento, essa diferença nasceu? (SFT + RLHF — seção 08.)
+
+> 💡 **Variação opcional:** troque as abas. Teste o `falcon:text` na aba **Chat** e o `falcon:7b` na aba **Completion**, e veja o que muda. Isso ajuda a separar duas coisas: o que vem do **modelo** (treinado ou não para seguir instruções) e o que vem da **interface** (completar texto cru ou conversar).
 
 ### B — Construindo o personagem (após a seção 09)
 

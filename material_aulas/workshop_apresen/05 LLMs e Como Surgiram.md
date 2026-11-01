@@ -199,7 +199,7 @@ O GPT-2 (2019, 1,5 bilhão de parâmetros) gerou tal preocupação com desinform
 | Treinamento | Mascaramento de tokens | Próximo token |
 | Ponto forte | Classificação, QA | Completar texto, diálogo |
 
-> 💡 **Demo ao vivo — tokenização:** O treinamento por "mascaramento de tokens" e "próximo token" só faz sentido quando você vê o que é um token. Use os demos em [[Recursos e Demos#06. Como os LLMs Aprendem — auto-supervisão, tokens e geração|Recursos: Tokenização]] — [Runcell Token Counter](https://www.runcell.dev/tool/token-counter#counter) e [HuggingFace Tokenizer Playground](https://huggingface.co/spaces/Xenova/the-tokenizer-playground) — para mostrar como o mesmo texto é dividido de formas diferentes por diferentes modelos.
+> 💡 **Demo ao vivo — tokenização:** O treinamento por "mascaramento de tokens" e "próximo token" só faz sentido quando você vê o que é um token. Use os demos em [[Recursos e Demos#06. Como os LLMs Aprendem — auto-supervisão, tokens e geração|Recursos: Tokenização]] — [HuggingFace Tokenizer Playground](https://huggingface.co/spaces/Xenova/the-tokenizer-playground) — para mostrar como o mesmo texto é dividido de formas diferentes por diferentes modelos.
 
 ---
 

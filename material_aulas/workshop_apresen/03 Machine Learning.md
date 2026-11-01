@@ -67,7 +67,7 @@ Alguns exemplos de como isso se aplica:
 
 ## Tipos de aprendizado
 
-![[figs/tipos_aprendizado.svg]]
+![[figs/tipos_aprendizado.svg|656]]
 
 Os três tipos diferem em *como* os dados de treinamento são fornecidos:
 
@@ -81,7 +81,7 @@ No **aprendizado por reforço**, o modelo aprende através de interação com um
 
 ## Como o modelo aprende — a intuição do gradiente
 
-Imagine que você está tentando acertar um alvo no escuro. Você atira, ouve onde a flecha caiu, e ajusta a mira. Atira de novo. Ajusta de novo. Com o tempo, você converge para o alvo.
+Imagine que você está atirando flechas em um alvo, mas há um **vento** que você não vê e não sabe medir. Você mira, atira, e observa **quanto o vento desviou a flecha** do centro. Então corrige a mira na direção contrária ao desvio e atira de novo. Vê o novo desvio, corrige de novo. Com o tempo, as flechas passam a cair cada vez mais perto do centro — sem que você precise saber a força do vento, só **medir o erro e corrigir**.
 
 Esse é o processo básico de treinamento em ML:
 
